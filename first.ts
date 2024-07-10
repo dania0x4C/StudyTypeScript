@@ -100,6 +100,37 @@ const bool: any = true
 
 arr+bool// 그래서 말도 안 되는 연산이 가능해졌다
 
+// unknown은 어느 타입이든 할당이 가능하다.
+let value: unknown = 'type';
+value = 10;
+value = true;
 
-//남은 개념(void, unknown, never)
+// 하지만 타입 체크를 하지 않으면 컴파일러 오류가 생겨서 사용이 불가능하다
+if(typeof value === "string") {
+    console.log(value)
+}
 
+// console.log(value) 사용 불가능
+
+//void는 함수에서 반환 값이 없다는 것을 표현 할 때 사용하는 것
+function voidPrac(param: string): void {
+    console.log(param);
+}
+
+//never
+
+// 이 함수는 결코 정상적으로 종료되지 않습니다.
+function error(message: string): never {
+    throw new Error(message); // 예외를 발생시키고 종료됩니다.
+  }
+  
+  function infiniteLoop(): never {
+    while (true) {
+      // 무한 루프로 인해 함수가 결코 종료되지 않습니다.
+    }
+  }
+
+  // 필요성
+  // 코드의 특정 부분이 실행되지 않도록 설계된 경우에 타입 안정성을 보장하는 데 매우 중요하다.
+  // 즉, 예상치 못 한 값이나 상태에 대한 처리를 따로 할 필요가 없다.
+  
