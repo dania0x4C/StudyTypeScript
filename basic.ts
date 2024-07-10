@@ -1,7 +1,5 @@
 //타입스크립트는 컴파일을 하면 javascript 코드가 되는 언어이다.
 
-import { AgentArn } from "aws-sdk/clients/datasync";
-
 let a ="hello"
 // a = 1 typescript에서 값을 추론해서 다른 변수의 값으로 전환이 안 되게 만들었다
 
